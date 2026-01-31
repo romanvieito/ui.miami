@@ -11,7 +11,7 @@ const testimonials = [
     business: "Mendez Auto Repair",
     years: "32 years in Little Havana",
     quote:
-      "My father started this shop in 1992. For 30 years, people found us through word of mouth. InCubando helped my son understand our story and now people find us on Google. We're booked three weeks out.",
+      "My father started this shop in 1992. For 30 years, people found us through word of mouth. UI.Miami helped my son understand our story and now people find us on Google. We're booked three weeks out.",
     image: "/testimonial-1.jpg",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     business: "Vega's Cuban Bakery",
     years: "45 years in Hialeah",
     quote:
-      "I didn't understand social media. My granddaughter tried to help but didn't know our recipes' stories. InCubando sat with me, listened, and now our pastelitos are famous online. My grandmother would be proud.",
+      "I didn't understand social media. My granddaughter tried to help but didn't know our recipes' stories. UI.Miami sat with me, listened, and now our pastelitos are famous online. My grandmother would be proud.",
     image: "/testimonial-2.jpg",
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     business: "Diaz Furniture Custom",
     years: "28 years in Coral Gables",
     quote:
-      "We almost closed because big stores were taking our customers. InCubando showed Miami why handcrafted matters. Now designers are calling us. The AI understood our craft better than we expected.",
+      "We almost closed because big stores were taking our customers. UI.Miami showed Miami why handcrafted matters. Now designers are calling us. The AI understood our craft better than we expected.",
     image: "/testimonial-3.jpg",
   },
 ];

@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <a href="#" className="inline-block mb-6">
               <span className="text-3xl font-bold">
-                In<span className="text-coral">Cubando</span>
+                UI<span className="text-coral">.Miami</span>
               </span>
             </a>
             <p className="text-white/60 leading-relaxed mb-6 max-w-md">
@@ -51,11 +51,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:hola@incubando.com"
+                  href="mailto:hola@ui.miami"
                   className="flex items-center gap-3 text-white/60 hover:text-coral transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  hola@incubando.com
+                  hola@ui.miami
                 </a>
               </li>
               <li>
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            © 2026 InCubando. All rights reserved.
+            © 2026 UI.Miami. All rights reserved.
           </p>
           <div className="flex gap-6 text-white/40 text-sm">
             <a href="#" className="hover:text-white transition-colors">

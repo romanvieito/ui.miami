@@ -26,7 +26,7 @@ export default function Difference() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-coral font-medium text-lg mb-8 tracking-wide uppercase"
           >
-            The InCubando Difference
+            The UI.Miami Difference
           </motion.p>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">

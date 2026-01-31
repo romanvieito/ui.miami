@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "InCubando | Making Your Legacy Discoverable",
+  title: "UI.Miami | Making Your Legacy Discoverable",
   description:
     "AI-powered digital authority for Cuban small businesses in Miami. We translate 40 years of expertise into digital gold.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Miami marketing",
   ],
   openGraph: {
-    title: "InCubando | Making Your Legacy Discoverable",
+    title: "UI.Miami | Making Your Legacy Discoverable",
     description:
       "AI-powered digital authority for Cuban small businesses in Miami.",
     type: "website",
