@@ -1,24 +1,75 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function Problem() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 bg-gray-900">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">The Problem</h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">Traditional businesses struggle in the digital age</h3>
-            <p className="text-gray-300">
-              Cuban small businesses in Miami have decades of experience and loyal customers,
-              but they struggle to compete online with modern marketing techniques.
-            </p>
+    <section ref={ref} className="py-32 px-6 bg-dark-card">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 leading-tight">
+            The algorithm doesn&apos;t care about your{" "}
+            <span className="gradient-text">40 years of experience.</span>
+            <br />
+            <span className="text-white/90">We do.</span>
+          </h2>
+
+          <div className="space-y-8 text-lg md:text-xl text-white/70 leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              You&apos;ve built something remarkable.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              Word of mouth built your business for 30 years.
+              <br />
+              <span className="text-white font-medium">
+                But word of mouth doesn&apos;t show up on Google.
+              </span>
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="text-white text-xl md:text-2xl font-medium pt-4"
+            >
+              Your competitor with 6 months of experience?
+              <br />
+              <span className="gradient-text font-bold">They do.</span>
+            </motion.p>
           </div>
-          <div className="bg-dark p-8 rounded-lg">
-            <div className="text-4xl mb-4">📉</div>
-            <h4 className="text-xl font-semibold mb-2">Lost Opportunities</h4>
-            <p className="text-gray-300">
-              Without proper digital presence, businesses miss out on new customers and growth opportunities.
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="mt-16 p-8 bg-dark rounded-2xl border border-white/10"
+          >
+            <p className="text-2xl md:text-3xl font-semibold text-white italic">
+              &ldquo;You&apos;re not behind.
+              <br />
+              <span className="gradient-text">You&apos;re just untranslated.</span>&rdquo;
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

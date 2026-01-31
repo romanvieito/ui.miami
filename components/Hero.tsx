@@ -1,16 +1,112 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const rotatingWords = ["recipes", "expertise", "reputation", "legacy"];
+
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-dark to-gray-900">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
-          Making Your Legacy Discoverable
-        </h1>
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          AI-powered digital authority for Cuban small businesses in Miami. We translate 40 years of expertise into digital gold.
-        </p>
-        <button className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-lg font-semibold transition-colors">
-          Get Started
-        </button>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark to-dark-card" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,107,74,0.15),transparent_50%)]" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Pre-headline */}
+          <p className="text-white/60 text-lg md:text-xl mb-6 tracking-wide">
+            For the next generation of Cuban businesses in Miami
+          </p>
+
+          {/* Main headline with rotating word */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+            Your abuela&apos;s secret{" "}
+            <span className="relative inline-block min-w-[280px] md:min-w-[340px]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingWords[currentIndex]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="gradient-text absolute left-0 right-0"
+                >
+                  {rotatingWords[currentIndex]}
+                </motion.span>
+              </AnimatePresence>
+              <span className="invisible">{rotatingWords[0]}</span>
+            </span>
+            <br />
+            <span className="text-white/90">deserves to be found.</span>
+          </h1>
+
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed"
+          >
+            The world is searching for it.
+            <br />
+            <span className="text-white">They just can&apos;t find you yet.</span>
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <motion.a
+              href="#pricing"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-coral hover:bg-coral-light text-white font-bold text-lg px-10 py-4 rounded-full transition-all shadow-lg shadow-coral/30"
+            >
+              Make Your Legacy Discoverable
+            </motion.a>
+            <motion.a
+              href="#how-it-works"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-white/80 hover:text-white font-medium text-lg px-8 py-4 border border-white/20 rounded-full hover:border-white/40 transition-all"
+            >
+              See How It Works
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
+          >
+            <motion.div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
