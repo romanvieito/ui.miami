@@ -26,6 +26,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
     }
 
+    // Send push notification via ntfy.sh
+    try {
+      await fetch(`https://ntfy.sh/${process.env.NTFY_TOPIC}`, {
+        method: "POST",
+        body: `New Lead: ${name}\n${email}\n${phone}`,
+        headers: {
+          "Authorization": `Bearer ${process.env.NTFY_TOKEN}`,
+          "Title": "🚀 New InMiami Lead",
+          "Priority": "high",
+          "Tags": "moneybag,partying_face",
+        }
+      });
+    } catch (ntfyError) {
+      console.error("Error sending notification:", ntfyError);
+      // We don't fail the request if notification fails, since email was sent
+    }
+
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
   } catch (error) {
     console.error("Error sending email:", error);
