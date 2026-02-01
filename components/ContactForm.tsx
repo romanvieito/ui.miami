@@ -48,6 +48,13 @@ export default function ContactForm() {
         hasMessage: !!formState.message.trim(),
       });
 
+      // Google Ads Conversion
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "conversion", {
+          send_to: "AW-16510475658/rxuaCOHA9vAbEIq758A9",
+        });
+      }
+
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -165,7 +172,7 @@ export default function ContactForm() {
           </>
         ) : (
           <>
-            Start Your Story
+            Send Message
             <Send className="w-5 h-5" />
           </>
         )}
