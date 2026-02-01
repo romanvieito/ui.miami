@@ -26,13 +26,13 @@ export default function Difference() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-coral font-medium text-lg mb-8 tracking-wide uppercase"
           >
-            The UI.Miami Difference
+            Before & After
           </motion.p>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-            We&apos;re not a marketing agency.
+            You survived on word-of-mouth.
             <br />
-            <span className="gradient-text">We&apos;re translators.</span>
+            <span className="gradient-text">But nobody&apos;s talking anymore.</span>
           </h2>
 
           <motion.div
@@ -42,10 +42,10 @@ export default function Difference() {
             className="max-w-3xl mx-auto"
           >
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-12">
-              Your history is the strategy.
+              They&apos;re asking ChatGPT, Google, TikTok.
               <br />
               <span className="text-white font-medium">
-                AI is just the megaphone.
+                And the AI doesn&apos;t know you yet...
               </span>
             </p>
 
@@ -55,10 +55,10 @@ export default function Difference() {
                 className="bg-dark-card/50 rounded-xl p-6 border border-white/10 text-left"
               >
                 <p className="text-white/40 text-sm uppercase tracking-wider mb-2">
-                  Others say
+                  Before
                 </p>
                 <p className="text-white/60 text-lg">
-                  &ldquo;Let us build your brand from scratch.&rdquo;
+                  Your reputation traveled through handshakes and conversations. That was enough.
                 </p>
               </motion.div>
 
@@ -67,10 +67,10 @@ export default function Difference() {
                 className="bg-coral/10 rounded-xl p-6 border border-coral/30 text-left"
               >
                 <p className="text-coral text-sm uppercase tracking-wider mb-2">
-                  We say
+                  After
                 </p>
                 <p className="text-white text-lg font-medium">
-                  &ldquo;Your brand already exists. Let us make it visible.&rdquo;
+                  Your reputation travels through algorithms. We teach them your story.
                 </p>
               </motion.div>
             </div>

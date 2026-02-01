@@ -75,12 +75,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex justify-center">
-          <p className="text-white/40 text-sm">
-            © 2026 UI.Miami. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

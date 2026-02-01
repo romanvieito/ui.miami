@@ -20,7 +20,7 @@ const steps = [
     title: "The Translation",
     description: "AI transforms your expertise into digital gold.",
     detail:
-      "Our AI analyzes your decades of knowledge and creates a content library that speaks to modern customers.",
+      "Our AI analyzes your years of knowledge and creates a content library that speaks to modern customers.",
   },
   {
     number: "03",
