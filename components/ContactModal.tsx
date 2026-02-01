@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import ContactForm from "./ContactForm";
 import { useEffect } from "react";
+import { trackEvent } from "@/lib/mixpanel";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -11,6 +12,15 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  // Track modal open/close events
+  useEffect(() => {
+    if (isOpen) {
+      trackEvent("Contact Modal Opened");
+    } else {
+      trackEvent("Contact Modal Closed");
+    }
+  }, [isOpen]);
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {

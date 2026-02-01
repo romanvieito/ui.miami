@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Check, Sparkles } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
+import { trackEvent } from "@/lib/mixpanel";
 
 const features = [
   "Quick story extraction session",
@@ -92,7 +93,10 @@ export default function Pricing() {
 
               {/* CTA */}
               <motion.button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  trackEvent("Pricing CTA Click", { button: "Start Your Story Today", section: "pricing" });
+                  setIsModalOpen(true);
+                }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-coral hover:bg-coral-light text-white font-bold text-lg py-5 rounded-full transition-all shadow-lg shadow-coral/30"

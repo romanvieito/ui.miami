@@ -3,6 +3,38 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Server-side Mixpanel tracking function
+async function trackMixpanelEvent(eventName: string, properties: Record<string, any> = {}) {
+  const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
+  if (!MIXPANEL_TOKEN) return;
+
+  try {
+    const response = await fetch(`https://api.mixpanel.com/track`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        data: JSON.stringify([{
+          event: eventName,
+          properties: {
+            token: MIXPANEL_TOKEN,
+            distinct_id: properties.distinct_id || 'server-user',
+            time: Math.floor(Date.now() / 1000),
+            ...properties,
+          },
+        }]),
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Failed to track Mixpanel event:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error tracking Mixpanel event:', error);
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const { name, email, phone, message } = await request.json();
@@ -25,6 +57,16 @@ export async function POST(request: Request) {
       console.error("Resend error:", data.error);
       return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
     }
+
+    // Track successful lead in Mixpanel
+    await trackMixpanelEvent("Lead Email Sent", {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+      hasPhone: !!phone,
+      hasMessage: !!message,
+    });
 
     // Send push notification via ntfy.sh
     try {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Loader2 } from "lucide-react";
+import { trackEvent } from "@/lib/mixpanel";
 
 export default function ContactForm() {
   const [formState, setFormState] = useState({
@@ -17,7 +18,15 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
+    // Track form submission attempt
+    trackEvent("Contact Form Submitted", {
+      hasName: !!formState.name.trim(),
+      hasEmail: !!formState.email.trim(),
+      hasPhone: !!formState.phone.trim(),
+      hasMessage: !!formState.message.trim(),
+    });
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -31,9 +40,23 @@ export default function ContactForm() {
         throw new Error("Failed to send message");
       }
 
+      // Track successful form submission
+      trackEvent("Contact Form Success", {
+        name: formState.name,
+        email: formState.email,
+        hasPhone: !!formState.phone.trim(),
+        hasMessage: !!formState.message.trim(),
+      });
+
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
+
+      // Track form submission failure
+      trackEvent("Contact Form Error", {
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+
       alert("Something went wrong. Please try again or email us directly.");
     } finally {
       setIsSubmitting(false);

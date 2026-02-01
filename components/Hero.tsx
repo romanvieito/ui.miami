@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackEvent } from "@/lib/mixpanel";
 
 const rotatingWords = ["tours", "clases", "eventos", "agenda"];
 
@@ -75,6 +76,7 @@ export default function Hero() {
           >
             <motion.a
               href="#pricing"
+              onClick={() => trackEvent("Hero CTA Click", { button: "Start Your Story", section: "hero" })}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-coral hover:bg-coral-light text-white font-bold text-lg px-10 py-4 rounded-full transition-all shadow-lg shadow-coral/30"
@@ -83,6 +85,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href="#how-it-works"
+              onClick={() => trackEvent("Hero CTA Click", { button: "See How It Works", section: "hero" })}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="text-white/80 hover:text-white font-medium text-lg px-8 py-4 border border-white/20 rounded-full hover:border-white/40 transition-all"

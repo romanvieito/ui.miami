@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/mixpanel";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,6 +52,7 @@ export default function Navbar() {
 
         <motion.a
           href="#pricing"
+          onClick={() => trackEvent("Navbar CTA Click", { button: "Start Your Story", section: "navbar" })}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-coral hover:bg-coral-light text-white font-semibold px-6 py-2.5 rounded-full transition-colors"

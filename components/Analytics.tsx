@@ -12,6 +12,31 @@ function AnalyticsContent() {
     initMixpanel();
   }, []);
 
+  // Scroll depth tracking
+  useEffect(() => {
+    const scrollDepths = [25, 50, 75, 100];
+    const trackedDepths = new Set<number>();
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+      scrollDepths.forEach(depth => {
+        if (scrollPercent >= depth && !trackedDepths.has(depth)) {
+          trackedDepths.add(depth);
+          trackEvent("Scroll Depth Reached", {
+            depth: depth,
+            path: pathname,
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
+
   useEffect(() => {
     if (pathname) {
       // mixpanel.track_pageview() is not a function in all versions, often simple .track() is used or specialized method.
