@@ -44,34 +44,36 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-white mb-6">Contact</h4>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="mailto:hola@ui.miami"
-                  className="flex items-center gap-3 text-white/60 hover:text-coral transition-colors"
-                >
-                  <Mail className="w-5 h-5" />
-                  hola@ui.miami
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+17868179906"
-                  className="flex items-center gap-3 text-white/60 hover:text-coral transition-colors"
-                >
-                  <Phone className="w-5 h-5" />
-                  (786) 817-9906
-                </a>
-              </li>
-              <li>
-                <span className="flex items-center gap-3 text-white/60">
-                  <MapPin className="w-5 h-5" />
-                  Miami, FL
-                </span>
-              </li>
-            </ul>
+          <div className="md:col-span-2 md:flex md:flex-col md:items-end">
+            <div>
+              <h4 className="font-semibold text-white mb-6">Contact</h4>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href="mailto:hola@ui.miami"
+                    className="flex items-center gap-3 text-white/60 hover:text-coral transition-colors"
+                  >
+                    <Mail className="w-5 h-5" />
+                    hola@ui.miami
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+17868179906"
+                    className="flex items-center gap-3 text-white/60 hover:text-coral transition-colors"
+                  >
+                    <Phone className="w-5 h-5" />
+                    (786) 817-9906
+                  </a>
+                </li>
+                <li>
+                  <span className="flex items-center gap-3 text-white/60">
+                    <MapPin className="w-5 h-5" />
+                    Miami, FL
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
