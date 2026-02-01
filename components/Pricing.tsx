@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Check, Sparkles } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ContactModal from "@/components/ContactModal";
 
 const features = [
   "Quick story extraction session",
@@ -18,7 +18,7 @@ const features = [
 export default function Pricing() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [showForm, setShowForm] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section id="pricing" ref={ref} className="py-32 px-6 bg-dark relative">
@@ -91,25 +91,19 @@ export default function Pricing() {
               </div>
 
               {/* CTA */}
-              {showForm ? (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  transition={{ duration: 0.5 }}
-                  className="mt-6"
-                >
-                  <ContactForm />
-                </motion.div>
-              ) : (
-                <motion.button
-                  onClick={() => setShowForm(true)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-coral hover:bg-coral-light text-white font-bold text-lg py-5 rounded-full transition-all shadow-lg shadow-coral/30"
-                >
-                  Start Your Story Today
-                </motion.button>
-              )}
+              <motion.button
+                onClick={() => setIsModalOpen(true)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-coral hover:bg-coral-light text-white font-bold text-lg py-5 rounded-full transition-all shadow-lg shadow-coral/30"
+              >
+                Start Your Story Today
+              </motion.button>
+
+              <ContactModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+              />
 
               <p className="text-center text-white/40 text-sm mt-6">
                 Schedule a free discovery call first
