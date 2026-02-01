@@ -18,7 +18,7 @@ const features = [
   },
   {
     icon: Volume2,
-    title: "You Rank",
+    title: "You Sell",
     description: "Your story. Their algorithm. Your customers.",
   },
 ];
@@ -28,37 +28,31 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" ref={ref} className="py-32 px-6 bg-dark">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+    <section id="features" ref={ref} className="py-24 px-6 bg-dark">
+      <div className="max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-3xl md:text-4xl font-bold text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold">
-            How it <span className="gradient-text">works</span>
-          </h2>
-        </motion.div>
+          How it <span className="gradient-text">works</span>
+        </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-4">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-dark-card rounded-2xl p-8 border border-white/10 card-hover"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: index * 0.15, duration: 0.5 }}
+              className="flex items-center gap-4 md:flex-col md:text-center"
             >
-              <div className="w-14 h-14 rounded-xl bg-coral/20 flex items-center justify-center mb-6">
-                <feature.icon className="w-7 h-7 text-coral" />
+              <span className="text-4xl font-bold text-coral">{index + 1}</span>
+              <div>
+                <h3 className="text-lg font-semibold text-white">{feature.title}</h3>
+                <p className="text-white/50 text-sm">{feature.description}</p>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white">
-                {feature.title}
-              </h3>
-              <p className="text-white/60 leading-relaxed">
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>
