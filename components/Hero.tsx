@@ -63,7 +63,7 @@ export default function Hero() {
           >
             Customers are looking for you right now.
             <br />
-            <span className="text-white">We make sure they find you — and buy.</span>
+            <span className="text-white">We make sure they find you...and buy.</span>
           </motion.p>
 
           {/* CTA Buttons */}
