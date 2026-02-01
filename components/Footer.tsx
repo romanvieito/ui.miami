@@ -10,10 +10,10 @@ export default function Footer() {
       <div className="bg-gradient-to-r from-coral/20 via-coral/10 to-coral/20 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-            Ready to start your story?
+            You don't get too far to stop now...
           </h3>
           <p className="text-white/60 text-lg mb-8">
-            Join the next generation of Cuban businesses in Miami.
+            Join the Next Gen of Cuban businesses in Miami.
           </p>
           <motion.a
             href="#pricing"
@@ -21,7 +21,7 @@ export default function Footer() {
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-coral hover:bg-coral-light text-white font-bold text-lg px-10 py-4 rounded-full transition-all"
           >
-            Get Started
+            Let them find you
           </motion.a>
         </div>
       </div>
