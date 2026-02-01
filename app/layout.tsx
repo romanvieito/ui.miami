@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "UI.Miami | Making Your Legacy Discoverable",
   description:
-    "AI-powered digital authority for Cuban small businesses in Miami. We translate 40 years of expertise into digital gold.",
+    "AI-powered digital authority for Cuban small businesses in Miami. We translate your years of expertise into digital gold.",
   keywords: [
     "Cuban business Miami",
     "AI marketing",

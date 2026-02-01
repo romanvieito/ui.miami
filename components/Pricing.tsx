@@ -34,7 +34,7 @@ export default function Pricing() {
             Claim your <span className="gradient-text">digital legacy</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-            Because your family&apos;s 40 years shouldn&apos;t be invisible.
+            Because your family&apos;s years of expertise shouldn&apos;t be invisible.
           </p>
         </motion.div>
 

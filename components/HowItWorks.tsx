@@ -12,7 +12,7 @@ const steps = [
     title: "The Interview",
     description: "We sit with you. Coffee optional, stories required.",
     detail:
-      "A 90-minute deep dive into your expertise, your journey, and what makes your business irreplaceable.",
+      "A quick deep dive into your expertise, your journey, and what makes your business irreplaceable.",
   },
   {
     number: "02",

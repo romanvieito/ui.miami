@@ -19,7 +19,7 @@ export default function Problem() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-12 leading-tight">
             The algorithm doesn&apos;t care about your{" "}
-            <span className="gradient-text">40 years of experience.</span>
+            <span className="gradient-text">years of expertise.</span>
             <br />
             <span className="text-white/90">We do.</span>
           </h2>
@@ -38,7 +38,7 @@ export default function Problem() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Word of mouth built your business for 30 years.
+              Word of mouth built your business for years.
               <br />
               <span className="text-white font-medium">
                 But word of mouth doesn&apos;t show up on Google.

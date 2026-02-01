@@ -10,7 +10,7 @@ const features = [
     icon: Mic,
     title: "AI-Powered Story Mining",
     description:
-      "We interview. We listen. We extract 30 years of expertise in 30 minutes.",
+      "We interview. We listen. We extract your years of expertise in no time.",
   },
   {
     icon: Sparkles,
