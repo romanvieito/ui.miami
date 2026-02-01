@@ -9,8 +9,8 @@ import { trackEvent } from "@/lib/mixpanel";
 
 const features = [
   "Website",
-  "Google optimization",
-  "Social media content",
+  "Ads",
+  "Digital growth",
   "Just by texting us (Email, SMS, WhatsApp)",
 ];
 
