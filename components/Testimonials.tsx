@@ -7,27 +7,29 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carlos Mendez",
-    business: "Mendez Auto Repair",
-    years: "32 years in Little Havana",
+    name: "Alberto Terrero",
+    business: "KLASS Bathroom & Kitchen",
+    link: "https://www.klassbathroomandkitchen.com/",
+    years: "+20 years in Hialeah",
     quote:
-      "My father started this shop in 1992. For 30 years, people found us through word of mouth. UI.Miami helped my son understand our story and now people find us on Google. We're booked three weeks out.",
+      "We had to relocate. 30 years of local trust, reset to zero. Starting over is daunting. UI.Miami didn't just fix our website; they told our story. Now, Google brings us the right people. We’re not just back in business. We’re being found.",
     image: "/testimonial-1.jpg",
   },
   {
-    name: "Maria Elena Vega",
-    business: "Vega's Cuban Bakery",
-    years: "45 years in Hialeah",
+    name: "Yainery Bolaños",
+    business: "Tsla.miami",
+    link: "https://www.tsla.miami/",
+    years: "8 years in Edgewater",
     quote:
-      "I didn't understand social media. My granddaughter tried to help but didn't know our recipes' stories. UI.Miami sat with me, listened, and now our pastelitos are famous online. My grandmother would be proud.",
+      "We had to pivot our entire rental fleet. It was terrifying. We were invisible in a crowded market. UI.Miami didn't just 'help us'... they connected us with the exact customers searching for us on Google. We went from scared to booked solid.",
     image: "/testimonial-2.jpg",
   },
   {
-    name: "Roberto & Ana Diaz",
-    business: "Diaz Furniture Custom",
-    years: "28 years in Coral Gables",
+    name: "Erlys Escalona",
+    business: "Escalona Consulting",
+    years: "14 years in Homestead",
     quote:
-      "We almost closed because big stores were taking our customers. UI.Miami showed Miami why handcrafted matters. Now designers are calling us. The AI understood our craft better than we expected.",
+      "We almost closed because big consultants were taking our customers. UI.Miami showed Miami why handcrafted matters. Now designers are calling us. The AI understood our craft better than we expected.",
     image: "/testimonial-3.jpg",
   },
 ];
@@ -62,16 +64,7 @@ export default function Testimonials() {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="bg-dark rounded-2xl p-8 border border-white/10 card-hover flex flex-col"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-gold text-gold"
-                  />
-                ))}
-              </div>
-
+          
               {/* Quote */}
               <blockquote className="text-white/80 leading-relaxed mb-8 flex-grow">
                 &ldquo;{testimonial.quote}&rdquo;
@@ -90,7 +83,18 @@ export default function Testimonials() {
                       {testimonial.name}
                     </p>
                     <p className="text-white/50 text-sm">
-                      {testimonial.business}
+                      {testimonial.link ? (
+                        <a 
+                          href={testimonial.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="hover:text-coral transition-colors"
+                        >
+                          {testimonial.business}
+                        </a>
+                      ) : (
+                        testimonial.business
+                      )}
                     </p>
                     <p className="text-coral/70 text-xs mt-1">
                       {testimonial.years}
