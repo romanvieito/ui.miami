@@ -62,7 +62,7 @@ export default function Pricing() {
               {/* Price */}
               <div className="mb-8">
                 <div className="flex flex-col gap-4">
-                  <span className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                  <span className="text-2xl md:text-3xl font-bold text-white leading-tight">
                     &quot;Pay us what you think it was worth this month.&quot;
                   </span>
                   <span className="text-coral font-medium text-lg">
