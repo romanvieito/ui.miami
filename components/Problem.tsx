@@ -9,7 +9,7 @@ export default function Problem() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 px-6 bg-dark-card">
+    <section ref={ref} className="py-16 md:py-32 px-6 bg-dark-card">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -17,12 +17,12 @@ export default function Problem() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 leading-tight">
             Google doesn&apos;t know{" "}
             <span className="gradient-text">you&apos;re the best.</span>
           </h2>
 
-          <div className="space-y-6 text-lg md:text-xl text-white/70 leading-relaxed">
+          <div className="space-y-4 md:space-y-6 text-lg md:text-xl text-white/70 leading-relaxed">
             <motion.p
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark-card border-t border-white/10">
       {/* CTA Banner */}
-      <div className="bg-gradient-to-r from-coral/20 via-coral/10 to-coral/20 py-16 px-6">
+      <div className="bg-gradient-to-r from-coral/20 via-coral/10 to-coral/20 py-10 md:py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
             You don't get too far to stop now...
@@ -27,8 +27,8 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-12">
+      <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
+        <div className="grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#" className="inline-block mb-6">

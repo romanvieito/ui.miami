@@ -9,7 +9,7 @@ export default function Difference() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 px-6 bg-dark relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-32 px-6 bg-dark relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,74,0.1),transparent_60%)]" />
 
@@ -29,7 +29,7 @@ export default function Difference() {
             Before & After
           </motion.p>
 
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 md:mb-8">
             You survived on word-of-mouth.
             <br />
             <span className="gradient-text">But nobody&apos;s talking anymore.</span>
@@ -41,7 +41,7 @@ export default function Difference() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-8 md:mb-12">
               They&apos;re asking online. Google, ChatGPT, TikTok, etc.
               <br />
               <span className="text-white font-medium">
@@ -49,7 +49,7 @@ export default function Difference() {
               </span>
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="bg-dark-card/50 rounded-xl p-6 border border-white/10 text-left"

@@ -29,14 +29,14 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           {/* Pre-headline */}
-          <p className="text-white/60 text-lg md:text-xl mt-14 mb-6 tracking-wide">
+          <p className="text-white/60 text-lg md:text-xl mt-14 mb-4 md:mb-6 tracking-wide">
             We help Cuban businesses in Miami sell more...
           </p>
 
           {/* Main headline with rotating word */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
             Your {""}
-            <span className="relative inline-block min-w-[280px] md:min-w-[340px]">
+            <span className="relative inline-block min-w-[200px] md:min-w-[340px]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={rotatingWords[currentIndex]}
@@ -60,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed"
           >
             Customers are looking for you right now.
             <br />

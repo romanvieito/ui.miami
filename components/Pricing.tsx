@@ -20,7 +20,7 @@ export default function Pricing() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="pricing" ref={ref} className="py-32 px-6 bg-dark relative">
+    <section id="pricing" ref={ref} className="py-16 md:py-32 px-6 bg-dark relative">
       {/* Background accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,107,74,0.15),transparent_60%)]" />
 
@@ -29,7 +29,7 @@ export default function Pricing() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Sell <span className="gradient-text">moreeeee...</span>
@@ -124,9 +124,9 @@ export default function Pricing() {
           className="flex flex-wrap justify-center gap-8 mt-12 text-white/40 text-sm"
         >
           <span>100% Satisfaction Guarantee</span>
-          <span>•</span>
+          <span className="hidden sm:inline">•</span>
           <span>Miami-Based Team</span>
-          <span>•</span>
+          <span className="hidden sm:inline">•</span>
           <span>Bilingual Support</span>
         </motion.div>
       </div>
