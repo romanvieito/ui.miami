@@ -8,21 +8,18 @@ import { Mic, Sparkles, Volume2 } from "lucide-react";
 const features = [
   {
     icon: Mic,
-    title: "AI-Powered Story Mining",
-    description:
-      "We interview. We listen. We extract your years of expertise in no time.",
+    title: "We Listen",
+    description: "One conversation. We extract what makes you different.",
   },
   {
     icon: Sparkles,
-    title: "Digital Authority Engine",
-    description:
-      "Turn your reputation into ads, content, and social proof that actually converts.",
+    title: "We Build",
+    description: "Ads, content, and proof that converts.",
   },
   {
     icon: Volume2,
-    title: "Legacy-First Translation",
-    description:
-      "We don't replace your story. We amplify it for the algorithm age.",
+    title: "You Rank",
+    description: "Your story. Their algorithm. Your customers.",
   },
 ];
 
@@ -39,12 +36,9 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            What we <span className="gradient-text">actually do</span>
+          <h2 className="text-3xl md:text-5xl font-bold">
+            How it <span className="gradient-text">works</span>
           </h2>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-            The market is a contest for attention. We translate your legacy into a story for the digital age.
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
