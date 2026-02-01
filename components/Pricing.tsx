@@ -52,12 +52,14 @@ export default function Pricing() {
             <div className="relative z-10">
 
               {/* Package name */}
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                Cuban Way Package
-              </h3>
-              <p className="text-white/50 mb-8">
-                Everything you need to be found
-              </p>
+              <div className="text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  Cuban Way Package
+                </h3>
+                <p className="text-white/50 mb-8">
+                  Everything you need to be found
+                </p>
+              </div>
 
               {/* Price */}
               <div className="mb-8">
