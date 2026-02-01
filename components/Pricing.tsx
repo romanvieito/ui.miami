@@ -8,12 +8,10 @@ import ContactModal from "@/components/ContactModal";
 import { trackEvent } from "@/lib/mixpanel";
 
 const features = [
-  "Quick story extraction session",
-  "Social media content calendar",
   "Website content optimization",
-  "30-day digital authority campaign",
-  "Google Business optimization",
-  "Just texting us (Email, SMS, WhatsApp)",
+  "Google optimization",
+  "Social media content calendar",
+  "Just by texting us (Email, SMS, WhatsApp)",
 ];
 
 export default function Pricing() {
@@ -34,10 +32,10 @@ export default function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Claim your <span className="gradient-text">digital legacy</span>
+            Sell <span className="gradient-text">moreeeee...</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-            Because your family&apos;s years of expertise shouldn&apos;t be invisible.
+            Because your family&apos;s deserve it.
           </p>
         </motion.div>
 
@@ -58,7 +56,7 @@ export default function Pricing() {
                 Cuban Way Package
               </h3>
               <p className="text-white/50 mb-8">
-                Everything you need to become discoverable
+                Everything you need to be found
               </p>
 
               {/* Price */}
