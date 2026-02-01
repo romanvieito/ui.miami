@@ -32,9 +32,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#" className="inline-block mb-6">
-              <span className="text-3xl font-bold">
-                UI<span className="text-coral">.Miami</span>
-              </span>
+              <img src="/logo.png" alt="UI.Miami Logo" className="h-16 w-auto" />
             </a>
             <p className="text-white/60 leading-relaxed mb-6 max-w-md">
               Making your local reputation discoverable to the modern world.
