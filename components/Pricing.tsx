@@ -6,12 +6,12 @@ import { useRef } from "react";
 import { Check, Sparkles } from "lucide-react";
 
 const features = [
-  "90-minute story extraction session",
-  "AI-generated content library (30+ pieces)",
+  "Quick story extraction session",
+  "Social media content calendar",
+  "Website content optimization",
   "30-day digital authority campaign",
   "Google Business optimization",
-  "Social media content calendar",
-  "Performance analytics dashboard",
+  "Just texting us (Email, SMS, WhatsApp)",
 ];
 
 export default function Pricing() {
@@ -49,15 +49,10 @@ export default function Pricing() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-coral/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
             <div className="relative z-10">
-              {/* Badge */}
-              <div className="flex items-center gap-2 bg-coral/20 text-coral px-4 py-2 rounded-full w-fit mb-8">
-                <Sparkles className="w-4 h-4" />
-                <span className="text-sm font-medium">Most Popular</span>
-              </div>
 
               {/* Package name */}
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Legacy Launch Package
+                Cuban Way Package
               </h3>
               <p className="text-white/50 mb-8">
                 Everything you need to become discoverable
@@ -65,15 +60,14 @@ export default function Pricing() {
 
               {/* Price */}
               <div className="mb-8">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl md:text-6xl font-bold text-white">
-                    $2,497
+                <div className="flex flex-col gap-4">
+                  <span className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                    &quot;Pay us what you think it was worth this month.&quot;
                   </span>
-                  <span className="text-white/50">one-time</span>
+                  <span className="text-coral font-medium text-lg">
+                    (Risky, but Cuban)
+                  </span>
                 </div>
-                <p className="text-coral mt-2">
-                  or 3 payments of $897/month
-                </p>
               </div>
 
               {/* Features */}
@@ -104,7 +98,7 @@ export default function Pricing() {
               </motion.button>
 
               <p className="text-center text-white/40 text-sm mt-6">
-                Schedule a free 15-minute discovery call first
+                Schedule a free discovery call first
               </p>
             </div>
           </div>

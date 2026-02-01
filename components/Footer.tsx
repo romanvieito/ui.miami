@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="bg-gradient-to-r from-coral/20 via-coral/10 to-coral/20 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-            Ready to make your legacy discoverable?
+            Ready to start your story?
           </h3>
           <p className="text-white/60 text-lg mb-8">
             Join the next generation of Cuban businesses in Miami.
