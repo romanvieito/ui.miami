@@ -35,7 +35,7 @@ export default function Pricing() {
             Sell <span className="gradient-text">moreeeee...</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-            Because your family&apos;s deserve it.
+            Just do it.
           </p>
         </motion.div>
 

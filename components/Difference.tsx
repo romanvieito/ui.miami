@@ -42,7 +42,7 @@ export default function Difference() {
             className="max-w-3xl mx-auto"
           >
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-12">
-              They&apos;re asking ChatGPT, Google, TikTok.
+              They&apos;re asking online. Google, ChatGPT, TikTok, etc.
               <br />
               <span className="text-white font-medium">
                 And the AI doesn&apos;t know you yet...
