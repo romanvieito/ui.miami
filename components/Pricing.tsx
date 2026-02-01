@@ -8,7 +8,7 @@ import ContactModal from "@/components/ContactModal";
 import { trackEvent } from "@/lib/mixpanel";
 
 const features = [
-  "Website content optimization",
+  "Website",
   "Google optimization",
   "Social media content calendar",
   "Just by texting us (Email, SMS, WhatsApp)",
