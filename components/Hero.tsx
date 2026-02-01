@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const rotatingWords = ["recipes", "expertise", "reputation", "legacy"];
+const rotatingWords = ["cafecito", "croquetas", "ropa vieja", "pastelitos"];
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +29,7 @@ export default function Hero() {
         >
           {/* Pre-headline */}
           <p className="text-white/60 text-lg md:text-xl mt-14 mb-6 tracking-wide">
-            For the next generation of Cuban businesses in Miami
+            We help Cuban businesses in Miami sell more online
           </p>
 
           {/* Main headline with rotating word */}
@@ -51,7 +51,7 @@ export default function Hero() {
               <span className="invisible">{rotatingWords[0]}</span>
             </span>
             <br />
-            <span className="text-white/90">deserves to be found.</span>
+            <span className="text-white/90">should be selling out.</span>
           </h1>
 
           {/* Subheadline */}
@@ -61,9 +61,9 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            The world is searching for it.
+            Customers are looking for you right now.
             <br />
-            <span className="text-white">They just can&apos;t find you yet.</span>
+            <span className="text-white">We make sure they find you — and buy.</span>
           </motion.p>
 
           {/* CTA Buttons */}
