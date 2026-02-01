@@ -33,7 +33,7 @@ export async function POST(request: Request) {
         body: `New Lead: ${name}\n${email}\n${phone}`,
         headers: {
           "Authorization": `Bearer ${process.env.NTFY_TOKEN}`,
-          "Title": "🚀 New InMiami Lead",
+          "Title": "New InMiami Lead",
           "Priority": "high",
           "Tags": "moneybag,partying_face",
         }
