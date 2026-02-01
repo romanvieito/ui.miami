@@ -30,7 +30,7 @@ export default function Hero() {
         >
           {/* Pre-headline */}
           <p className="text-white/60 text-lg md:text-xl mt-14 mb-6 tracking-wide">
-            We help Cuban businesses in Miami sell more online
+            We help Cuban businesses in Miami sell more...
           </p>
 
           {/* Main headline with rotating word */}
