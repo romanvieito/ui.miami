@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { trackEvent } from "@/lib/mixpanel";
 
-const rotatingWords = ["tours", "clases", "eventos", "agenda"];
+const rotatingWords = ["agenda", "service", "class", "event"];
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
