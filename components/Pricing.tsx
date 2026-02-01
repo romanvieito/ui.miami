@@ -52,7 +52,7 @@ export default function Pricing() {
             <div className="relative z-10">
 
               {/* Package name */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                 Cuban Way Package
               </h3>
               <p className="text-white/50 mb-8">
