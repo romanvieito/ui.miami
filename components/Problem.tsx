@@ -66,7 +66,7 @@ export default function Problem() {
             <p className="text-2xl md:text-3xl font-semibold text-white italic">
               &ldquo;You&apos;re not behind.
               <br />
-              <span className="gradient-text">You&apos;re just untranslated.</span>&rdquo;
+              <span className="gradient-text">Attention is all you need.</span>&rdquo;
             </p>
           </motion.div>
         </motion.div>

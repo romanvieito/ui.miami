@@ -43,7 +43,7 @@ export default function Features() {
             What we <span className="gradient-text">actually do</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-            We&apos;re not a marketing agency. We&apos;re translators.
+            The market is a contest for attention. We translate your legacy into a story for the digital age.
           </p>
         </motion.div>
 
