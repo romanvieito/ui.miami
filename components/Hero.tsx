@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const rotatingWords = ["cafecito", "croquetas", "ropa vieja", "pastelitos"];
+const rotatingWords = ["tours", "clases", "eventos", "agenda"];
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
