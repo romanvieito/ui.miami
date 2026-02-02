@@ -15,7 +15,7 @@ export default function Pricing({ locale = "en" }: { locale?: Locale }) {
   const copy = getMessages(locale).pricing;
 
   return (
-    <section id="pricing" ref={ref} className="py-16 md:py-32 px-6 bg-dark relative">
+    <section id="pricing" ref={ref} className="py-10 md:py-20 px-6 bg-dark relative">
       {/* Background accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,107,74,0.15),transparent_60%)]" />
 
@@ -40,7 +40,7 @@ export default function Pricing({ locale = "en" }: { locale?: Locale }) {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="bg-gradient-to-b from-dark-card to-dark-lighter rounded-3xl p-1"
         >
-          <div className="bg-dark-card rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden">
+          <div className="bg-dark-card rounded-3xl p-6 md:p-9 border border-white/10 relative overflow-hidden">
             {/* Decorative element */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-coral/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
