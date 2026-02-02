@@ -5,7 +5,43 @@ import { motion } from "framer-motion";
 import { Send, Loader2 } from "lucide-react";
 import { trackEvent } from "@/lib/mixpanel";
 
-export default function ContactForm() {
+type Locale = "en" | "es";
+
+const content = {
+  en: {
+    successTitle: "Message Sent!",
+    successBody: "We'll get back to you shortly to start your story.",
+    nameLabel: "Name",
+    namePlaceholder: "Your name",
+    emailLabel: "Email",
+    emailPlaceholder: "john@example.com",
+    phoneLabel: "Phone",
+    phonePlaceholder: "(305) 555-0123",
+    messageLabel: "Message (Optional)",
+    messagePlaceholder: "Tell us about your business...",
+    sending: "Sending...",
+    sendMessage: "Send Message",
+    errorAlert: "Something went wrong. Please try again or email us directly.",
+  },
+  es: {
+    successTitle: "¡Mensaje enviado!",
+    successBody: "Te contactaremos pronto para comenzar tu historia.",
+    nameLabel: "Nombre",
+    namePlaceholder: "Tu nombre",
+    emailLabel: "Correo electrónico",
+    emailPlaceholder: "juan@ejemplo.com",
+    phoneLabel: "Teléfono",
+    phonePlaceholder: "(305) 555-0123",
+    messageLabel: "Mensaje (Opcional)",
+    messagePlaceholder: "Cuéntanos sobre tu negocio...",
+    sending: "Enviando...",
+    sendMessage: "Enviar mensaje",
+    errorAlert: "Algo salió mal. Inténtalo de nuevo o escríbenos por email.",
+  },
+} as const;
+
+export default function ContactForm({ locale = "en" }: { locale?: Locale }) {
+  const copy = content[locale];
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -64,7 +100,7 @@ export default function ContactForm() {
         error: error instanceof Error ? error.message : "Unknown error",
       });
 
-      alert("Something went wrong. Please try again or email us directly.");
+      alert(copy.errorAlert);
     } finally {
       setIsSubmitting(false);
     }
@@ -87,9 +123,9 @@ export default function ContactForm() {
         <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
           <Send className="w-8 h-8 text-green-500" />
         </div>
-        <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+        <h3 className="text-2xl font-bold text-white mb-2">{copy.successTitle}</h3>
         <p className="text-white/60">
-          We'll get back to you shortly to start your story.
+          {copy.successBody}
         </p>
       </motion.div>
     );
@@ -99,7 +135,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4 text-left">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-1 pl-1">
-          Name
+          {copy.nameLabel}
         </label>
         <input
           type="text"
@@ -109,14 +145,14 @@ export default function ContactForm() {
           value={formState.name}
           onChange={handleChange}
           className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-coral transition-colors"
-          placeholder="Your name"
+          placeholder={copy.namePlaceholder}
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-1 pl-1">
-            Email
+            {copy.emailLabel}
           </label>
           <input
             type="email"
@@ -126,12 +162,12 @@ export default function ContactForm() {
             value={formState.email}
             onChange={handleChange}
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-coral transition-colors"
-            placeholder="john@example.com"
+            placeholder={copy.emailPlaceholder}
           />
         </div>
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-white/80 mb-1 pl-1">
-            Phone
+            {copy.phoneLabel}
           </label>
           <input
             type="tel"
@@ -140,14 +176,14 @@ export default function ContactForm() {
             value={formState.phone}
             onChange={handleChange}
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-coral transition-colors"
-            placeholder="(305) 555-0123"
+            placeholder={copy.phonePlaceholder}
           />
         </div>
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-1 pl-1">
-          Message (Optional)
+          {copy.messageLabel}
         </label>
         <textarea
           id="message"
@@ -156,7 +192,7 @@ export default function ContactForm() {
           value={formState.message}
           onChange={handleChange}
           className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-coral transition-colors resize-none"
-          placeholder="Tell us about your business..."
+          placeholder={copy.messagePlaceholder}
         />
       </div>
 
@@ -168,11 +204,11 @@ export default function ContactForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
-            Sending...
+            {copy.sending}
           </>
         ) : (
           <>
-            Send Message
+            {copy.sendMessage}
             <Send className="w-5 h-5" />
           </>
         )}

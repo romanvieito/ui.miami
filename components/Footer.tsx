@@ -3,17 +3,39 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
-export default function Footer() {
+type Locale = "en" | "es";
+
+const content = {
+  en: {
+    ctaHeadline: "You don't get too far to stop now...",
+    ctaSubheading: "Join the Next Gen of Cuban businesses in Miami.",
+    ctaButton: "Let them find you",
+    description:
+      "Making your local reputation discoverable to the modern world. For the next generation of Cuban businesses. Built in Miami.",
+    contactLabel: "Contact",
+  },
+  es: {
+    ctaHeadline: "No has llegado tan lejos para detenerte ahora...",
+    ctaSubheading: "Únete a la nueva generación de negocios cubanos en Miami.",
+    ctaButton: "Que te encuentren",
+    description:
+      "Hacemos que tu reputación local sea descubrible para el mundo moderno. Para la próxima generación de negocios cubanos. Hecho en Miami.",
+    contactLabel: "Contacto",
+  },
+} as const;
+
+export default function Footer({ locale = "en" }: { locale?: Locale }) {
+  const copy = content[locale];
   return (
     <footer className="bg-dark-card border-t border-white/10">
       {/* CTA Banner */}
       <div className="bg-gradient-to-r from-coral/20 via-coral/10 to-coral/20 py-10 md:py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-            You don't get too far to stop now...
+            {copy.ctaHeadline}
           </h3>
           <p className="text-white/60 text-lg mb-8">
-            Join the Next Gen of Cuban businesses in Miami.
+            {copy.ctaSubheading}
           </p>
           <motion.a
             href="#pricing"
@@ -21,7 +43,7 @@ export default function Footer() {
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-coral hover:bg-coral-light text-white font-bold text-lg px-10 py-4 rounded-full transition-all"
           >
-            Let them find you
+            {copy.ctaButton}
           </motion.a>
         </div>
       </div>
@@ -35,8 +57,7 @@ export default function Footer() {
               <img src="/logo.png" alt="UI.Miami Logo" className="h-16 w-auto" />
             </a>
             <p className="text-white/60 leading-relaxed mb-6 max-w-md">
-              Making your local reputation discoverable to the modern world.
-              For the next generation of Cuban businesses. Built in Miami.
+              {copy.description}
             </p>
             <p className="text-coral italic">
               Hecho con amor en Miami
@@ -46,7 +67,7 @@ export default function Footer() {
           {/* Contact */}
           <div className="md:col-span-2 md:flex md:flex-col md:items-end">
             <div>
-              <h4 className="font-semibold text-white mb-6">Contact</h4>
+              <h4 className="font-semibold text-white mb-6">{copy.contactLabel}</h4>
               <ul className="space-y-4">
                 <li>
                   <a

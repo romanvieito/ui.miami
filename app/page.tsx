@@ -11,15 +11,15 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-dark">
-      <Navbar />
-      <Hero />
-      <Problem />
-      <Features />
+      <Navbar locale="en" />
+      <Hero locale="en" />
+      <Problem locale="en" />
+      <Features locale="en" />
       {/* <HowItWorks /> */}
-      <Testimonials />
-      <Pricing />
-      <Difference />
-      <Footer />
+      <Testimonials locale="en" />
+      <Pricing locale="en" />
+      <Difference locale="en" />
+      <Footer locale="en" />
     </main>
   );
 }

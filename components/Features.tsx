@@ -5,27 +5,55 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Mic, Sparkles, Volume2 } from "lucide-react";
 
-const features = [
-  {
-    icon: Mic,
-    title: "We Listen",
-    description: "One conversation. We extract what makes you different.",
-  },
-  {
-    icon: Sparkles,
-    title: "We Build",
-    description: "Ads, content, and proof that converts.",
-  },
-  {
-    icon: Volume2,
-    title: "You Sell",
-    description: "Your story. Their algorithm. Your customers.",
-  },
-];
+type Locale = "en" | "es";
 
-export default function Features() {
+const content = {
+  en: {
+    heading: "How it works",
+    features: [
+      {
+        icon: Mic,
+        title: "We Listen",
+        description: "One conversation. We extract what makes you different.",
+      },
+      {
+        icon: Sparkles,
+        title: "We Build",
+        description: "Ads, content, and proof that converts.",
+      },
+      {
+        icon: Volume2,
+        title: "You Sell",
+        description: "Your story. Their algorithm. Your customers.",
+      },
+    ],
+  },
+  es: {
+    heading: "Cómo funciona",
+    features: [
+      {
+        icon: Mic,
+        title: "Escuchamos",
+        description: "Una conversación. Extraemos lo que te hace diferente.",
+      },
+      {
+        icon: Sparkles,
+        title: "Construimos",
+        description: "Anuncios, contenido y prueba social que convierte.",
+      },
+      {
+        icon: Volume2,
+        title: "Tú vendes",
+        description: "Tu historia. Su algoritmo. Tus clientes.",
+      },
+    ],
+  },
+} as const;
+
+export default function Features({ locale = "en" }: { locale?: Locale }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const copy = content[locale];
 
   return (
     <section id="features" ref={ref} className="py-16 md:py-32 px-6 bg-dark">
@@ -37,12 +65,13 @@ export default function Features() {
           className="text-center mb-12 md:mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold">
-            How it <span className="gradient-text">works</span>
+            {copy.heading.split(" ")[0]}{" "}
+            <span className="gradient-text">{copy.heading.split(" ").slice(1).join(" ")}</span>
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature, index) => (
+          {copy.features.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 40 }}

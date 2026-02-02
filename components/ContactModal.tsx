@@ -6,12 +6,27 @@ import ContactForm from "./ContactForm";
 import { useEffect } from "react";
 import { trackEvent } from "@/lib/mixpanel";
 
+type Locale = "en" | "es";
+
+const content = {
+  en: {
+    heading: "Start Your Story",
+    description: "Fill out the form below and we'll get back to you shortly.",
+  },
+  es: {
+    heading: "Comienza tu historia",
+    description: "Completa el formulario y te contactamos pronto.",
+  },
+} as const;
+
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
+  locale?: Locale;
 }
 
-export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+export default function ContactModal({ isOpen, onClose, locale = "en" }: ContactModalProps) {
+  const copy = content[locale];
   // Track modal open/close events
   useEffect(() => {
     if (isOpen) {
@@ -63,14 +78,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Start Your Story
+                  {copy.heading}
                 </h3>
                 <p className="text-white/60">
-                  Fill out the form below and we'll get back to you shortly.
+                  {copy.description}
                 </p>
               </div>
 
-              <ContactForm />
+              <ContactForm locale={locale} />
             </motion.div>
           </motion.div>
         </>

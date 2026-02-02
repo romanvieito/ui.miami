@@ -3,7 +3,31 @@
 import { motion } from "framer-motion";
 import { trackEvent } from "@/lib/mixpanel";
 
-export default function Hero() {
+type Locale = "en" | "es";
+
+const content = {
+  en: {
+    preheadline: "For Cuban businesses in Miami.",
+    headline: "Make your business",
+    headlineAccent: "the obvious choice.",
+    subheadlineTop: "Stop chasing. Start attracting.",
+    subheadlineAccent: "Great work deserves more...",
+    primaryCta: "Start Your Story",
+    secondaryCta: "See How It Works",
+  },
+  es: {
+    preheadline: "Para negocios cubanos en Miami.",
+    headline: "Haz que tu negocio",
+    headlineAccent: "sea la opción obvia.",
+    subheadlineTop: "Deja de perseguir. Empieza a atraer.",
+    subheadlineAccent: "El gran trabajo merece más...",
+    primaryCta: "Comienza tu historia",
+    secondaryCta: "Ver cómo funciona",
+  },
+} as const;
+
+export default function Hero({ locale = "en" }: { locale?: Locale }) {
+  const copy = content[locale];
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
@@ -18,13 +42,13 @@ export default function Hero() {
         >
           {/* Pre-headline */}
           <p className="text-white/60 text-lg md:text-xl mt-14 mb-4 md:mb-6 tracking-wide">
-            For Cuban businesses in Miami.
+            {copy.preheadline}
           </p>
 
           {/* Main headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8 text-white">
-            Make your business <br className="hidden md:block" />
-            <span className="gradient-text">the obvious choice.</span>
+            {copy.headline} <br className="hidden md:block" />
+            <span className="gradient-text">{copy.headlineAccent}</span>
           </h1>
 
           {/* Subheadline */}
@@ -34,9 +58,9 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed"
           >
-            Stop chasing. Start attracting.
+            {copy.subheadlineTop}
             <br />
-            <span className="text-white">Great work deserves more...</span>
+            <span className="text-white">{copy.subheadlineAccent}</span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -48,21 +72,31 @@ export default function Hero() {
           >
             <motion.a
               href="#pricing"
-              onClick={() => trackEvent("Hero CTA Click", { button: "Start Your Story", section: "hero" })}
+              onClick={() =>
+                trackEvent("Hero CTA Click", {
+                  button: copy.primaryCta,
+                  section: "hero",
+                })
+              }
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-coral hover:bg-coral-light text-white font-bold text-lg px-10 py-4 rounded-full transition-all shadow-lg shadow-coral/30"
             >
-              Start Your Story
+              {copy.primaryCta}
             </motion.a>
             <motion.a
               href="#how-it-works"
-              onClick={() => trackEvent("Hero CTA Click", { button: "See How It Works", section: "hero" })}
+              onClick={() =>
+                trackEvent("Hero CTA Click", {
+                  button: copy.secondaryCta,
+                  section: "hero",
+                })
+              }
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="text-white/80 hover:text-white font-medium text-lg px-8 py-4 border border-white/20 rounded-full hover:border-white/40 transition-all"
             >
-              See How It Works
+              {copy.secondaryCta}
             </motion.a>
           </motion.div>
         </motion.div>

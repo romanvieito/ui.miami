@@ -4,9 +4,39 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function Difference() {
+type Locale = "en" | "es";
+
+const content = {
+  en: {
+    kicker: "Before & After",
+    headlineTop: "You survived on word-of-mouth.",
+    headlineAccent: "But nobody's talking anymore.",
+    bodyTop: "They're asking online. Google, ChatGPT, TikTok, etc.",
+    bodyAccent: "And the AI doesn't know you yet...",
+    beforeLabel: "Before",
+    beforeText:
+      "Your reputation traveled through handshakes and conversations. That was enough.",
+    afterLabel: "After",
+    afterText: "Your reputation travels through algorithms. We teach them your story.",
+  },
+  es: {
+    kicker: "Antes y después",
+    headlineTop: "Viviste del boca a boca.",
+    headlineAccent: "Pero ya nadie habla.",
+    bodyTop: "Están preguntando en línea. Google, ChatGPT, TikTok, etc.",
+    bodyAccent: "Y la IA todavía no te conoce...",
+    beforeLabel: "Antes",
+    beforeText:
+      "Tu reputación viajaba por apretones de manos y conversaciones. Eso bastaba.",
+    afterLabel: "Después",
+    afterText: "Tu reputación viaja por algoritmos. Les enseñamos tu historia.",
+  },
+} as const;
+
+export default function Difference({ locale = "en" }: { locale?: Locale }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const copy = content[locale];
 
   return (
     <section ref={ref} className="py-16 md:py-32 px-6 bg-dark relative overflow-hidden">
@@ -26,13 +56,13 @@ export default function Difference() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-coral font-medium text-lg mb-8 tracking-wide uppercase"
           >
-            Before & After
+            {copy.kicker}
           </motion.p>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 md:mb-8">
-            You survived on word-of-mouth.
+            {copy.headlineTop}
             <br />
-            <span className="gradient-text">But nobody&apos;s talking anymore.</span>
+            <span className="gradient-text">{copy.headlineAccent}</span>
           </h2>
 
           <motion.div
@@ -42,10 +72,10 @@ export default function Difference() {
             className="max-w-3xl mx-auto"
           >
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-8 md:mb-12">
-              They&apos;re asking online. Google, ChatGPT, TikTok, etc.
+              {copy.bodyTop}
               <br />
               <span className="text-white font-medium">
-                And the AI doesn&apos;t know you yet...
+                {copy.bodyAccent}
               </span>
             </p>
 
@@ -55,10 +85,10 @@ export default function Difference() {
                 className="bg-dark-card/50 rounded-xl p-6 border border-white/10 text-left"
               >
                 <p className="text-white/40 text-sm uppercase tracking-wider mb-2">
-                  Before
+                  {copy.beforeLabel}
                 </p>
                 <p className="text-white/60 text-lg">
-                  Your reputation traveled through handshakes and conversations. That was enough.
+                  {copy.beforeText}
                 </p>
               </motion.div>
 
@@ -67,10 +97,10 @@ export default function Difference() {
                 className="bg-coral/10 rounded-xl p-6 border border-coral/30 text-left"
               >
                 <p className="text-coral text-sm uppercase tracking-wider mb-2">
-                  After
+                  {copy.afterLabel}
                 </p>
                 <p className="text-white text-lg font-medium">
-                  Your reputation travels through algorithms. We teach them your story.
+                  {copy.afterText}
                 </p>
               </motion.div>
             </div>
