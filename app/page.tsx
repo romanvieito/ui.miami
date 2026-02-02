@@ -15,7 +15,6 @@ export default function Home() {
       <Hero locale="en" />
       <Problem locale="en" />
       <Features locale="en" />
-      {/* <HowItWorks /> */}
       <Testimonials locale="en" />
       <Pricing locale="en" />
       <Difference locale="en" />
