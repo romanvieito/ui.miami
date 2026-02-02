@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
 import Difference from "@/components/Difference";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
@@ -35,7 +34,6 @@ export default function SpanishLandingPage() {
       <Hero locale="es" />
       <Problem locale="es" />
       <Features locale="es" />
-      <HowItWorks />
       <Testimonials locale="es" />
       <Pricing locale="es" />
       <Difference locale="es" />

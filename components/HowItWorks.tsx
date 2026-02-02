@@ -39,20 +39,6 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" ref={ref} className="py-32 px-6 bg-dark-card">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            How it <span className="gradient-text">works</span>
-          </h2>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-            Three steps from invisible to undeniable.
-          </p>
-        </motion.div>
-
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <motion.div
