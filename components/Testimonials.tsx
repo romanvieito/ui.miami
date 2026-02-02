@@ -25,11 +25,12 @@ const testimonials = [
     image: "/testimonial-2.jpg",
   },
   {
-    name: "Erlys Escalona",
-    business: "Escalona Consulting",
-    years: "14 years in Homestead",
+    name: "Alberto Roman",
+    business: "Woxo",
+    link: "https://woxo.tech/",
+    years: "Founded in Miami",
     quote:
-      "We almost closed because big consultants were taking our customers. UI.Miami showed Miami why handcrafted matters. Now designers are calling us. The AI understood our craft better than we expected.",
+      "Scaling a SaaS requires precise targeting. A PMax campaign was the way to go. The ROI speaks for itself.",
     image: "/testimonial-3.jpg",
   },
 ];
