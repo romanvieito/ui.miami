@@ -4,44 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Loader2 } from "lucide-react";
 import { trackEvent } from "@/lib/mixpanel";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    successTitle: "Message Sent!",
-    successBody: "We'll get back to you shortly to start your story.",
-    nameLabel: "Name",
-    namePlaceholder: "Your name",
-    emailLabel: "Email",
-    emailPlaceholder: "john@example.com",
-    phoneLabel: "Phone",
-    phonePlaceholder: "(305) 555-0123",
-    messageLabel: "Message (Optional)",
-    messagePlaceholder: "Tell us about your business...",
-    sending: "Sending...",
-    sendMessage: "Send Message",
-    errorAlert: "Something went wrong. Please try again or email us directly.",
-  },
-  es: {
-    successTitle: "¡Mensaje enviado!",
-    successBody: "Te contactaremos pronto para comenzar tu historia.",
-    nameLabel: "Nombre",
-    namePlaceholder: "Tu nombre",
-    emailLabel: "Correo electrónico",
-    emailPlaceholder: "juan@ejemplo.com",
-    phoneLabel: "Teléfono",
-    phonePlaceholder: "(305) 555-0123",
-    messageLabel: "Mensaje (Opcional)",
-    messagePlaceholder: "Cuéntanos sobre tu negocio...",
-    sending: "Enviando...",
-    sendMessage: "Enviar mensaje",
-    errorAlert: "Algo salió mal. Inténtalo de nuevo o escríbenos por email.",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function ContactForm({ locale = "en" }: { locale?: Locale }) {
-  const copy = content[locale];
+  const copy = getMessages(locale).contactForm;
   const [formState, setFormState] = useState({
     name: "",
     email: "",

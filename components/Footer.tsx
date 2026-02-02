@@ -2,30 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    ctaHeadline: "You don't get too far to stop now...",
-    ctaSubheading: "Join the Next Gen of Cuban businesses in Miami.",
-    ctaButton: "Let them find you",
-    description:
-      "Making your local reputation discoverable to the modern world. For the next generation of Cuban businesses. Built in Miami.",
-    contactLabel: "Contact",
-  },
-  es: {
-    ctaHeadline: "No has llegado tan lejos para detenerte ahora...",
-    ctaSubheading: "Únete a la nueva generación de negocios cubanos en Miami.",
-    ctaButton: "Que te encuentren",
-    description:
-      "Hacemos que tu reputación local sea descubrible para el mundo moderno. Para la próxima generación de negocios cubanos. Hecho en Miami.",
-    contactLabel: "Contacto",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Footer({ locale = "en" }: { locale?: Locale }) {
-  const copy = content[locale];
+  const copy = getMessages(locale).footer;
   return (
     <footer className="bg-dark-card border-t border-white/10">
       {/* CTA Banner */}

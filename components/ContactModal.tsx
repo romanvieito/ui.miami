@@ -5,19 +5,7 @@ import { X } from "lucide-react";
 import ContactForm from "./ContactForm";
 import { useEffect } from "react";
 import { trackEvent } from "@/lib/mixpanel";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    heading: "Start Your Story",
-    description: "Fill out the form below and we'll get back to you shortly.",
-  },
-  es: {
-    heading: "Comienza tu historia",
-    description: "Completa el formulario y te contactamos pronto.",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -26,7 +14,7 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose, locale = "en" }: ContactModalProps) {
-  const copy = content[locale];
+  const copy = getMessages(locale).contactModal;
   // Track modal open/close events
   useEffect(() => {
     if (isOpen) {

@@ -3,32 +3,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    headline: "Google doesn't know",
-    headlineAccent: "you're the best.",
-    lineOne: "Word of mouth doesn't rank.",
-    lineTwoLead: "Your competitor with 6 months?",
-    lineTwoAccent: "Page one.",
-    callout: "We fix that.",
-  },
-  es: {
-    headline: "Google no sabe",
-    headlineAccent: "que eres el mejor.",
-    lineOne: "El boca a boca no posiciona.",
-    lineTwoLead: "¿Tu competidor con 6 meses?",
-    lineTwoAccent: "Primera página.",
-    callout: "Lo solucionamos.",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Problem({ locale = "en" }: { locale?: Locale }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const copy = content[locale];
+  const copy = getMessages(locale).problem;
 
   return (
     <section ref={ref} className="py-16 md:py-32 px-6 bg-dark-card">

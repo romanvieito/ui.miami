@@ -3,31 +3,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { trackEvent } from "@/lib/mixpanel";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    howItWorks: "How It Works",
-    features: "Features",
-    pricing: "Pricing",
-    cta: "Start Your Story",
-    languageSwitchLabel: "ES",
-    languageSwitchHref: "/es",
-  },
-  es: {
-    howItWorks: "Cómo funciona",
-    features: "Características",
-    pricing: "Precios",
-    cta: "Comienza tu historia",
-    languageSwitchLabel: "EN",
-    languageSwitchHref: "/",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Navbar({ locale = "en" }: { locale?: Locale }) {
   const [scrolled, setScrolled] = useState(false);
-  const copy = content[locale];
+  const copy = getMessages(locale).navbar;
+  const languageSwitchHref = locale === "en" ? "/es" : "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +55,7 @@ export default function Navbar({ locale = "en" }: { locale?: Locale }) {
 
         <div className="flex items-center gap-4">
           <a
-            href={copy.languageSwitchHref}
+            href={languageSwitchHref}
             onClick={() =>
               trackEvent("Language Switch Click", {
                 target: copy.languageSwitchLabel,

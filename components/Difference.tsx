@@ -3,40 +3,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    kicker: "Before & After",
-    headlineTop: "You survived on word-of-mouth.",
-    headlineAccent: "But nobody's talking anymore.",
-    bodyTop: "They're asking online. Google, ChatGPT, TikTok, etc.",
-    bodyAccent: "And the AI doesn't know you yet...",
-    beforeLabel: "Before",
-    beforeText:
-      "Your reputation traveled through handshakes and conversations. That was enough.",
-    afterLabel: "After",
-    afterText: "Your reputation travels through algorithms. We teach them your story.",
-  },
-  es: {
-    kicker: "Antes y después",
-    headlineTop: "Viviste del boca a boca.",
-    headlineAccent: "Pero ya nadie habla.",
-    bodyTop: "Están preguntando en línea. Google, ChatGPT, TikTok, etc.",
-    bodyAccent: "Y la IA todavía no te conoce...",
-    beforeLabel: "Antes",
-    beforeText:
-      "Tu reputación viajaba por apretones de manos y conversaciones. Eso bastaba.",
-    afterLabel: "Después",
-    afterText: "Tu reputación viaja por algoritmos. Les enseñamos tu historia.",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Difference({ locale = "en" }: { locale?: Locale }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const copy = content[locale];
+  const copy = getMessages(locale).difference;
 
   return (
     <section ref={ref} className="py-16 md:py-32 px-6 bg-dark relative overflow-hidden">

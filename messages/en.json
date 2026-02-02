@@ -1,0 +1,134 @@
+{
+  "navbar": {
+    "howItWorks": "How It Works",
+    "features": "Features",
+    "pricing": "Pricing",
+    "cta": "Start Your Story",
+    "languageSwitchLabel": "ES"
+  },
+  "hero": {
+    "preheadline": "For Cuban businesses in Miami.",
+    "headline": "Make your business",
+    "headlineAccent": "the obvious choice.",
+    "subheadlineTop": "Stop chasing. Start attracting.",
+    "subheadlineAccent": "Great work deserves more...",
+    "primaryCta": "Start Your Story",
+    "secondaryCta": "See How It Works"
+  },
+  "problem": {
+    "headline": "Google doesn't know",
+    "headlineAccent": "you're the best.",
+    "lineOne": "Word of mouth doesn't rank.",
+    "lineTwoLead": "Your competitor with 6 months?",
+    "lineTwoAccent": "Page one.",
+    "callout": "We fix that."
+  },
+  "features": {
+    "headingPrefix": "How it",
+    "headingAccent": "works",
+    "items": [
+      {
+        "title": "We Listen",
+        "description": "One conversation. We extract what makes you different."
+      },
+      {
+        "title": "We Build",
+        "description": "Ads, content, and proof that converts."
+      },
+      {
+        "title": "You Sell",
+        "description": "Your story. Their algorithm. Your customers."
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "Stories from",
+    "headingAccent": "la comunidad",
+    "subheading": "Real Miami businesses. Real transformations.",
+    "items": [
+      {
+        "name": "Luis Herrera",
+        "business": "KLASS Bathroom & Kitchen",
+        "link": "https://www.klassbathroomandkitchen.com/",
+        "years": "+20 years in Hialeah",
+        "quote": "We had to relocate. 30 years of local trust, reset to zero. Starting over is daunting. UI.Miami didn't just fix our website; they told our story. Now, Google brings us the right people. We’re not just back in business. We’re being found.",
+        "image": "/testimonial-1.jpg"
+      },
+      {
+        "name": "Yainery Bolaños",
+        "business": "Tsla.miami",
+        "link": "https://www.tsla.miami/",
+        "years": "8 years in Edgewater",
+        "quote": "We wanted to pivot our entire rental fleet. It was terrifying. We were invisible in a crowded market. Ui.miami connected us with the exact customers on Google. We went from scared to booked solid.",
+        "image": "/testimonial-2.jpg"
+      },
+      {
+        "name": "Julio",
+        "business": "Woxo",
+        "link": "https://woxo.tech/",
+        "years": "Founded in Miami",
+        "quote": "Scaling a SaaS requires precise targeting. A PMax campaign was the way to go. The ROI speaks for itself. We went from $50.000 dolares of monthly loss to a monthly income in autopilot.",
+        "image": "/testimonial-3.jpg"
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Sell",
+    "headingAccent": "moreeeee...",
+    "subheading": "Just do it.",
+    "packageName": "Cuban Way Package",
+    "packageDescription": "Everything you need to be found",
+    "priceLine": "\"Pay us what you think it was worth this month.\"",
+    "priceNote": "(Risky, but Cuban)",
+    "features": [
+      "Website",
+      "Ads",
+      "Digital growth",
+      "Just by texting us (Email, SMS, WhatsApp)"
+    ],
+    "cta": "Start Your Story Today",
+    "footnote": "Schedule a free discovery call first",
+    "trustBadges": [
+      "100% Satisfaction Guarantee",
+      "Miami-Based Team",
+      "Bilingual Support"
+    ]
+  },
+  "difference": {
+    "kicker": "Before & After",
+    "headlineTop": "You survived on word-of-mouth.",
+    "headlineAccent": "But nobody's talking anymore.",
+    "bodyTop": "They're asking online. Google, ChatGPT, TikTok, etc.",
+    "bodyAccent": "And the AI doesn't know you yet...",
+    "beforeLabel": "Before",
+    "beforeText": "Your reputation traveled through handshakes and conversations. That was enough.",
+    "afterLabel": "After",
+    "afterText": "Your reputation travels through algorithms. We teach them your story."
+  },
+  "footer": {
+    "ctaHeadline": "You don't get too far to stop now...",
+    "ctaSubheading": "Join the Next Gen of Cuban businesses in Miami.",
+    "ctaButton": "Let them find you",
+    "description": "Making your local reputation discoverable to the modern world. For the next generation of Cuban businesses. Built in Miami.",
+    "contactLabel": "Contact"
+  },
+  "contactModal": {
+    "heading": "Start Your Story",
+    "description": "Fill out the form below and we'll get back to you shortly."
+  },
+  "contactForm": {
+    "successTitle": "Message Sent!",
+    "successBody": "We'll get back to you shortly to start your story.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "(305) 555-0123",
+    "messageLabel": "Message (Optional)",
+    "messagePlaceholder": "Tell us about your business...",
+    "sending": "Sending...",
+    "sendMessage": "Send Message",
+    "errorAlert": "Something went wrong. Please try again or email us directly."
+  }
+}

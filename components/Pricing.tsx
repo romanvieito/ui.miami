@@ -3,56 +3,16 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 import { trackEvent } from "@/lib/mixpanel";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    heading: "Sell",
-    headingAccent: "moreeeee...",
-    subheading: "Just do it.",
-    packageName: "Cuban Way Package",
-    packageDescription: "Everything you need to be found",
-    priceLine: '"Pay us what you think it was worth this month."',
-    priceNote: "(Risky, but Cuban)",
-    features: [
-      "Website",
-      "Ads",
-      "Digital growth",
-      "Just by texting us (Email, SMS, WhatsApp)",
-    ],
-    cta: "Start Your Story Today",
-    footnote: "Schedule a free discovery call first",
-    trustBadges: ["100% Satisfaction Guarantee", "Miami-Based Team", "Bilingual Support"],
-  },
-  es: {
-    heading: "Vende",
-    headingAccent: "más...",
-    subheading: "Solo hazlo.",
-    packageName: "Paquete Cuban Way",
-    packageDescription: "Todo lo que necesitas para que te encuentren",
-    priceLine: '"Páganos lo que creas que valió este mes."',
-    priceNote: "(Arriesgado, pero cubano)",
-    features: [
-      "Sitio web",
-      "Anuncios",
-      "Crecimiento digital",
-      "Solo con escribirnos (Email, SMS, WhatsApp)",
-    ],
-    cta: "Empieza tu historia hoy",
-    footnote: "Agenda primero una llamada de descubrimiento gratis",
-    trustBadges: ["Garantía de satisfacción 100%", "Equipo en Miami", "Soporte bilingüe"],
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Pricing({ locale = "en" }: { locale?: Locale }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const copy = content[locale];
+  const copy = getMessages(locale).pricing;
 
   return (
     <section id="pricing" ref={ref} className="py-16 md:py-32 px-6 bg-dark relative">

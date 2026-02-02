@@ -2,32 +2,10 @@
 
 import { motion } from "framer-motion";
 import { trackEvent } from "@/lib/mixpanel";
-
-type Locale = "en" | "es";
-
-const content = {
-  en: {
-    preheadline: "For Cuban businesses in Miami.",
-    headline: "Make your business",
-    headlineAccent: "the obvious choice.",
-    subheadlineTop: "Stop chasing. Start attracting.",
-    subheadlineAccent: "Great work deserves more...",
-    primaryCta: "Start Your Story",
-    secondaryCta: "See How It Works",
-  },
-  es: {
-    preheadline: "Para negocios cubanos en Miami.",
-    headline: "Haz que tu negocio",
-    headlineAccent: "sea la opción obvia.",
-    subheadlineTop: "Deja de perseguir. Empieza a atraer.",
-    subheadlineAccent: "El gran trabajo merece más...",
-    primaryCta: "Comienza tu historia",
-    secondaryCta: "Ver cómo funciona",
-  },
-} as const;
+import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Hero({ locale = "en" }: { locale?: Locale }) {
-  const copy = content[locale];
+  const copy = getMessages(locale).hero;
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
