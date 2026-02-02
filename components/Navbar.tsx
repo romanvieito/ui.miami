@@ -34,12 +34,6 @@ export default function Navbar({ locale = "en" }: { locale?: Locale }) {
 
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="#how-it-works"
-            className="text-white/70 hover:text-white transition-colors"
-          >
-            {copy.howItWorks}
-          </a>
-          <a
             href="#features"
             className="text-white/70 hover:text-white transition-colors"
           >
