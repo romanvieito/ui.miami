@@ -10,9 +10,9 @@ function AnalyticsContent() {
   const [isMixpanelReady, setIsMixpanelReady] = useState(false);
 
   useEffect(() => {
-    initMixpanel();
+    const ok = initMixpanel();
     // Small delay to ensure Mixpanel is properly initialized
-    setTimeout(() => setIsMixpanelReady(true), 100);
+    setTimeout(() => setIsMixpanelReady(ok), 100);
   }, []);
 
   // Scroll depth tracking
@@ -50,6 +50,23 @@ function AnalyticsContent() {
         path: pathname,
       });
     }
+  }, [pathname, searchParams, isMixpanelReady]);
+
+  // Manual test event for Mixpanel "Verify connection" step.
+  // Visit any page with `?mp_test=1` (or `&mp_test=1`) to send it.
+  useEffect(() => {
+    if (!isMixpanelReady) return;
+    if (searchParams?.get("mp_test") !== "1") return;
+
+    trackEvent("Mixpanel Test Event", {
+      path: pathname,
+      $current_url:
+        window.location.origin +
+        pathname +
+        (searchParams?.toString() ? "?" + searchParams.toString() : ""),
+      triggered_by: "mp_test_query_param",
+      ts: new Date().toISOString(),
+    });
   }, [pathname, searchParams, isMixpanelReady]);
 
   return null;
