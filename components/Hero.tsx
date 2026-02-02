@@ -19,7 +19,7 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
           transition={{ duration: 0.8 }}
         >
           {/* Pre-headline */}
-          <p className="text-white/60 text-lg md:text-xl mt-14 mb-4 md:mb-6 tracking-wide">
+          <p className="text-white/60 text-lg md:text-xl mb-4 md:mb-6 tracking-wide">
             {copy.preheadline}
           </p>
 
