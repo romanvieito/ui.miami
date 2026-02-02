@@ -7,7 +7,7 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Alberto Terrero",
+    name: "Luis Herrera",
     business: "KLASS Bathroom & Kitchen",
     link: "https://www.klassbathroomandkitchen.com/",
     years: "+20 years in Hialeah",
