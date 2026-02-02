@@ -63,7 +63,7 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
               {copy.primaryCta}
             </motion.a>
             <motion.a
-              href="#how-it-works"
+              href="#features"
               onClick={() =>
                 trackEvent("Hero CTA Click", {
                   button: copy.secondaryCta,
