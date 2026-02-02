@@ -10,7 +10,7 @@
     "preheadline": "Para negocios cubanos en Miami.",
     "headline": "Haz que tu negocio",
     "headlineAccent": "sea la opción",
-    "subheadlineTop": "Deja de perseguir. Empieza a atraer.",
+    "subheadlineTop": "Deja de caerles atrás. Ellos te están buscando.",
     "subheadlineAccent": "Tu trabajo merece más...",
     "primaryCta": "Vende más",
     "secondaryCta": "Ver cómo funciona"
@@ -18,10 +18,10 @@
   "problem": {
     "headline": "Google no sabe",
     "headlineAccent": "que eres el mejor.",
-    "lineOne": "El boca a boca no posiciona.",
-    "lineTwoLead": "¿Tu competidor con solo 6 meses?",
-    "lineTwoAccent": "Primera página.",
-    "callout": "Lo solucionamos."
+    "lineOne": "El boca a boca no es suficiente.",
+    "lineTwoLead": "¿Tu competencia con 6 meses?",
+    "lineTwoAccent": "Está en la primera página.",
+    "callout": "Lo resolvemos."
   },
   "features": {
     "headingPrefix": "Cómo",
@@ -29,15 +29,15 @@
     "items": [
       {
         "title": "Escuchamos",
-        "description": "Una conversación. Entendemos lo que te hace diferente."
+        "description": "Hablamos. Vemos lo que te hace diferente."
       },
       {
         "title": "Construimos",
-        "description": "Anuncios, contenido y estrategia que vende."
+        "description": "Anuncios, contenido y resultados que venden."
       },
       {
-        "title": "Tú vendes",
-        "description": "Tu historia + algoritmo...tus clientes."
+        "title": "Ventas",
+        "description": "Tu historia + IA...tus nuevos clientes."
       }
     ]
   },
