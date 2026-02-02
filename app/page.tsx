@@ -16,9 +16,9 @@ export default function Home() {
       <Problem />
       <Features />
       {/* <HowItWorks /> */}
-      <Difference />
       <Testimonials />
       <Pricing />
+      <Difference />
       <Footer />
     </main>
   );
