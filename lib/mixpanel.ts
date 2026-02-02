@@ -7,6 +7,18 @@ export const MIXPANEL_API_HOST =
 // Track if Mixpanel has been initialized
 let isMixpanelInitialized = false;
 
+const getLocaleFromClient = (): "en" | "es" => {
+  if (typeof document !== "undefined") {
+    const lang = document.documentElement?.lang?.toLowerCase();
+    if (lang === "es" || lang?.startsWith("es-")) return "es";
+  }
+  if (typeof window !== "undefined") {
+    const path = window.location?.pathname || "";
+    if (path === "/es" || path.startsWith("/es/")) return "es";
+  }
+  return "en";
+};
+
 export const initMixpanel = (): boolean => {
   if (typeof window === "undefined") return false;
   if (!MIXPANEL_TOKEN) {
@@ -61,7 +73,11 @@ export const trackEvent = (name: string, properties?: Record<string, any>) => {
   }
 
   try {
-    mixpanel.track(name, properties);
+    const locale =
+      properties && typeof properties.locale === "string"
+        ? properties.locale
+        : getLocaleFromClient();
+    mixpanel.track(name, { ...properties, locale });
   } catch (error) {
     console.warn('Failed to track Mixpanel event:', error);
   }
