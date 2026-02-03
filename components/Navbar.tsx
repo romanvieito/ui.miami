@@ -29,7 +29,7 @@ export default function Navbar({ locale = "en" }: { locale?: Locale }) {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <img src="/logo.png" alt="UI.Miami Logo" className="h-12 w-auto" />
+          <img src="/logo.svg" alt="UI.Miami Logo" className="h-12 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

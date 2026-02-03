@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Miami marketing",
   ],
   icons: {
-    icon: "/logo.png",
+    icon: "/logo.svg",
   },
   openGraph: {
     title: "UI.Miami | Making Your Legacy Discoverable",

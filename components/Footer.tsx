@@ -34,7 +34,7 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#" className="inline-block mb-6">
-              <img src="/logo.png" alt="UI.Miami Logo" className="h-16 w-auto" />
+              <img src="/logo.svg" alt="UI.Miami Logo" className="h-16 w-auto" />
             </a>
             <p className="text-white/60 leading-relaxed mb-6 max-w-md">
               {copy.description}
