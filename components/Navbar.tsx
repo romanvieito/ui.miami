@@ -56,9 +56,10 @@ export default function Navbar({ locale = "en" }: { locale?: Locale }) {
                 section: "navbar",
               })
             }
-            className="text-white/70 hover:text-white text-sm font-semibold tracking-wide transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-all text-sm font-semibold tracking-wide border border-white/10 hover:border-white/20"
           >
-            {copy.languageSwitchLabel}
+            <span className="text-lg leading-none">{locale === "en" ? "🇨🇺" : "🇺🇸"}</span>
+            <span className="text-white">{copy.languageSwitchLabel}</span>
           </a>
           <motion.a
             href="#pricing"
