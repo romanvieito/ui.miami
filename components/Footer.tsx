@@ -29,7 +29,7 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
+      <div className="max-w-6xl mx-auto px-6 py-10 md:py-16 text-center md:text-left">
         <div className="grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
@@ -45,10 +45,10 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-2 md:flex md:flex-col md:items-end">
-            <div>
+          <div className="md:col-span-2 md:flex md:flex-col md:items-end text-center md:text-right">
+            <div className="mx-auto md:mx-0">
               <h4 className="font-semibold text-white mb-6">{copy.contactLabel}</h4>
-              <ul className="space-y-4">
+              <ul className="space-y-4 flex flex-col items-center md:items-end">
                 <li>
                   <a
                     href="mailto:hola@ui.miami"
