@@ -46,21 +46,21 @@
     "headingAccent": "la comunidad",
     "subheading": "Real Miami businesses. Real transformations.",
     "items": [
-      {
-        "name": "Luis Herrera",
-        "business": "KLASS Bathroom & Kitchen",
-        "link": "https://www.klassbathroomandkitchen.com/",
-        "years": "+20 years in Hialeah",
-        "quote": "We had to relocate. 30 years of local trust, reset to zero. Starting over is daunting. UI.Miami didn't just fix our website; they told our story. Now, Google brings us the right people. We’re not just back in business. We’re being found.",
-        "image": "/testimonial-1.jpg"
-      },
-      {
+       {
         "name": "Yainery Bolaños",
         "business": "Tsla.miami",
         "link": "https://www.tsla.miami/",
         "years": "8 years in Edgewater",
         "quote": "We wanted to pivot our entire rental fleet. It was terrifying. We were invisible in a crowded market. Ui.miami connected us with the exact customers on Google. We went from scared to booked solid.",
         "image": "/testimonial-2.jpg"
+      },
+      {
+        "name": "Luis Herrera",
+        "business": "KLASS Bathroom & Kitchen",
+        "link": "https://www.klassbathroomandkitchen.com/",
+        "years": "+20 years in Hialeah",
+        "quote": "We've spent years building our reputation. We moved, restarted...Alberto has always helped with our websites and marketing. Now Google brings us the right people on autopilot.",
+        "image": "/testimonial-1.jpg"
       },
       {
         "name": "Julio Jimenez",
