@@ -52,7 +52,7 @@
         "link": "https://www.tsla.miami/",
         "years": "8 años en Edgewater",
         "quote": "Cambiamos por completo nuestra flota. Fue aterrador. Éramos invisibles en un mercado saturado. UI.Miami no solo 'nos ayudó'... nos conectó con los clientes exáctos en Google. Pasamos del miedo a tener todo booked.",
-        "image": "/testimonial-2.jpg"
+        "image": "/testimonials/testimonial-2.jpg"
       },
       {
         "name": "Luis Herrera",
@@ -60,7 +60,7 @@
         "link": "https://www.klassbathroomandkitchen.com/",
         "years": "+20 años en Hialeah",
         "quote": "Llevamos años trabajando en nuestra reputación. Nos mudamos, reiniciamos...Alberto siempre nos han ayudado con nuestos sitios web y con nuestro marketing... ahora Google nos trae a la gente indicada en autopilot.",
-        "image": "/testimonial-1.jpg"
+        "image": "/testimonials/testimonial-1.jpg"
       },
       {
         "name": "Julio Jimenez",
@@ -68,7 +68,7 @@
         "link": "https://woxo.tech/",
         "years": "Creado en Miami",
         "quote": "Escalar un SaaS requiere segmentación precisa. Una campaña PMax nos salvó, de $50.000 dolares de pérdida mensual a ganancias en piloto automático.",
-        "image": "/testimonial-3.jpg"
+        "image": "/testimonials/testimonial-3.jpg"
       }
     ]
   },

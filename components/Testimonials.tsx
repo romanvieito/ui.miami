@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { getMessages, type Locale } from "@/lib/messages";
 
 export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
@@ -45,11 +46,22 @@ export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
               {/* Author */}
               <div className="border-t border-white/10 pt-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
-                    <span className="text-coral font-bold text-lg">
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  </div>
+                  {testimonial.image ? (
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-coral/20 flex items-center justify-center">
+                      <span className="text-coral font-bold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                  )}
                   <div>
                     <p className="font-semibold text-white">
                       {testimonial.name}
