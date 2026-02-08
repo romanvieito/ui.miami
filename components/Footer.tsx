@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { getMessages, type Locale } from "@/lib/messages";
 
@@ -39,9 +40,12 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
             <p className="text-white/60 leading-relaxed mb-6 max-w-md">
               {copy.description}
             </p>
-            <p className="text-coral italic">
+            <p className="text-coral italic mb-4">
               Hecho con amor en Miami
             </p>
+            <Link href="/privacy-policy" className="text-sm text-white/40 hover:text-white transition-colors">
+              {copy.privacyPolicy}
+            </Link>
           </div>
 
           {/* Contact */}
